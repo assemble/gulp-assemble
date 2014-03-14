@@ -1,0 +1,7 @@
+{
+  "name": "grunt-assemble",
+  "version": "0.1.0",
+  "main": [
+    "tasks/assemble.js"
+  ]
+}
