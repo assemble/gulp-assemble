@@ -1,3 +1,9 @@
+/**
+ * Assemble <http://assemble.io>
+ *
+ * Copyright (c) 2014 Jon Schlinkert, Brian Woodward, contributors
+ * Licensed under the MIT License (MIT).
+ */
 
 // Node.js
 var path = require('path');
@@ -43,7 +49,7 @@ describe('gulp-assemble', function() {
     stream.on('end', function () {
       done();
     });
-    
+
     stream.write(fakeFile);
     stream.end();
 
