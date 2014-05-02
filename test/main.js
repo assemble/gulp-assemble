@@ -26,7 +26,7 @@ describe('gulp-assemble', function() {
     var options = {
       expand: true,
       cwd: 'node_modules/fixture/handlebars/with-yfm',
-      plugins: [path.resolve(path.join(__dirname, '..', 'lib', 'plugins')) + '/**/*.js'],
+      middleware: [path.resolve(path.join(__dirname, '..', 'lib', 'middleware')) + '/**/*.js'],
       log: {
         level: 'warning',
         theme: 'socket.io'
