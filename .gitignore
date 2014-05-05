@@ -19,7 +19,6 @@ release
 
 TODO.md
 
-*.sublime-project
-*.sublime-workspace
+*.sublime
 
-.assemble
+_gh_pages

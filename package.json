@@ -20,7 +20,7 @@
       "url": "https://github.com/assemble/gulp-assemble/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "lib/assemble.js",
+  "main": "index.js",
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -29,46 +29,42 @@
     "install": "echo WARNING!!! This package uses Assemble v0.5.0 alpha!"
   },
   "dependencies": {
-    "assemble": "git://github.com/assemble/assemble.git#v0.5.0",
-    "async": "^0.2.10",
-    "fs-utils": "~0.4.1",
-    "gulp-util": "~2.2.14",
-    "lodash": "~2.4.1",
-    "through2": "~0.4.1"
+    "assemble": "git://github.com/assemble/assemble.git#v0.5.0"
   },
   "devDependencies": {
-    "mocha": "*",
-    "chai": "~1.8.1",
-    "fixture": "~0.1.0",
-    "verb": "~0.2.3"
+    "async": "^0.8.0",
+    "chai": "^1.9.1",
+    "fixture": "^0.1.0",
+    "fs-utils": "^0.4.1",
+    "lodash": "^2.4.1",
+    "mocha": "^1.18.2",
+    "through2": "^0.4.1",
+    "verb": "^0.2.6"
   },
   "keywords": [
-    "gulp",
+    "assemble",
+    "assemblerunner",
     "blog",
     "build",
-    "builder",
-    "components",
-    "deployment",
-    "front matter",
+    "component",
+    "front",
+    "front-matter",
     "generator",
-    "generators",
+    "gulp",
     "handlebars",
+    "helper",
     "helpers",
     "javascript",
-    "front-matter",
+    "matter",
     "node",
     "node.js",
-    "pages",
+    "page",
+    "post",
     "partial",
-    "partials",
     "scaffold",
-    "scaffolds",
     "site",
     "static",
     "task",
-    "templates",
-    "templating",
-    "website",
-    "yaml"
+    "templates"
   ]
 }
