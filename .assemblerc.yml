@@ -1,0 +1,32 @@
+# =============================================
+# ASSEMBLE CONFIG
+# =============================================
+
+dest:        _gh_pages
+
+
+# =============================================
+# SOURCE CONFIG
+# =============================================
+
+title:       Site Title
+
+
+# Metadata
+data:
+- {name: 'site', src: ['.assemblerc.yml']} # This is magic
+- test/fixtures/data/*.json
+- package.json
+
+
+# Templates
+partials:    test/fixtures/includes/*.hbs
+layoutdir:   test/fixtures/layouts/
+layout:      default.hbs
+
+
+# =============================================
+# EXTENSIONS
+# =============================================
+
+middleware:  ['examples/**/*.js']
