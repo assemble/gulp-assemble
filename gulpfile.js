@@ -3,9 +3,6 @@ var htmlmin = require('gulp-htmlmin');
 var verb = require('gulp-verb');
 var assemble = require('./');
 
-/**
- * Remove this file before we release the plugin
- */
 
 gulp.task('assemble', function () {
   gulp.src('test/fixtures/pages/*.hbs')
@@ -14,11 +11,11 @@ gulp.task('assemble', function () {
     .pipe(gulp.dest('_gh_pages/'));
 });
 
-
 gulp.task('verb', function () {
   gulp.src(['.verbrc.md'])
     .pipe(verb({dest: 'README.md'}))
     .pipe(gulp.dest('./'));
 });
+
 
 gulp.task('default', ['assemble', 'verb']);

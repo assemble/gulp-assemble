@@ -8,15 +8,19 @@ Since gulp-assemble is using the [v0.5.0-alpha branch of Assemble](https://githu
 
 ## Install
 
-Install with [npm](npmjs.org):
+Install with [npm](npmjs.org) (actually this is doing a `git clone` while we're in alpha):
 
 ```bash
 npm i assemble/gulp-assemble && assemble/handlebars-helpers#v0.6.0
 ```
 
+Next, cd into the project and run `npm install` to install dependencies.
+
+
+
 ## Usage
 
-Example **gulpfile.js**:
+Example **gulpfile.js** with gulp-assemble and [gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin):
 
 ```javascript
 var gulp = require('gulp');
