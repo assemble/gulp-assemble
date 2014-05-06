@@ -6,11 +6,11 @@
  */
 
 // node_modules
-var assemble = require('assemble');
-var through = require('through2');
 var fs = require('fs');
 var path = require('path');
 var async = require('async');
+var assemble = require('assemble');
+var through = require('through2');
 var gutil = require('gulp-util');
 var _ = require('lodash');
 
