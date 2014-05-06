@@ -5,8 +5,6 @@
  * Licensed under the MIT License (MIT).
  */
 
-// node_modules
-var fs = require('fs');
 var path = require('path');
 var async = require('async');
 var assemble = require('assemble');
