@@ -1,7 +1,7 @@
 {
   "name": "gulp-assemble",
   "description": "Gulp plugin for Assemble.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "homepage": "http://assemble.io",
   "author": {
     "name": "Brian Woodward",
@@ -30,7 +30,8 @@
   },
   "dependencies": {
     "assemble": "git://github.com/assemble/assemble.git#v0.5.0",
-    "gulp-util": "^2.2.14"
+    "gulp-util": "^2.2.14",
+    "through2": "^0.4.1"
   },
   "devDependencies": {
     "async": "^0.8.0",
