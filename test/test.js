@@ -22,9 +22,11 @@ describe('gulp-assemble', function() {
     it('should build files', function(done) {
 
       var options = {
-        cwd: yfmFixtures,
-        middleware: [middleware],
-        log: {level: 'warning', theme: 'socket.io'}
+        helpers: {
+          upper: function (str) {
+            return str.toUpperCase();
+          }
+        }
       };
 
       var stream = assemble(options);
@@ -33,11 +35,11 @@ describe('gulp-assemble', function() {
         cwd: yfmFixtures,
         base: yfmFixtures,
         path: yfmFixtures + '/alert.hbs',
-        contents: new Buffer('sup')
+        contents: new Buffer('---\ntitle: sup\n---\n{{upper title}}')
       });
 
       stream.on('data', function (page) {
-        expect('sup').to.eql(page.contents.toString());
+        expect('SUP').to.eql(page.contents.toString());
       });
 
       stream.on('end', function () {

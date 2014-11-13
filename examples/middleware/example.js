@@ -1,25 +1,8 @@
 module.exports = function(assemble) {
-  var options = assemble.config;
-
-
-  /**
-   * The actual plugin
-   */
-
-  var middleware = function (params, next) {
+  var options = assemble.options;
+  return function exampleMiddleware (file, next) {
     // do stuff
+    file.data.quote = "Added to file.data through example middleware!";
     next();
-  };
-
-
-
-  /**
-   * Plugin events, define a single `event`
-   * or an `events` array
-   */
-
-  middleware.event = 'page:before:render';
-  return {
-    'assemble-middleware-foo': middleware
   };
 };

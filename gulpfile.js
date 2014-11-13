@@ -1,21 +1,25 @@
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
-var verb = require('gulp-verb');
 var assemble = require('./');
 
+var options = {
+  layout: 'default',
+  data: ['site.yml', 'test/fixtures/data/*.{json,yml}'],
+  layouts: ['test/fixtures/layouts/*.hbs'],
+  partials: ['test/fixtures/includes/*.hbs']
+};
 
+// add some middleware to run when the files are loaded
+var middleware = require('./examples/middleware/example');
+assemble.instance.onLoad(/\.*/, middleware(assemble));
+
+// build some sample pages based on the templates in test/fixtures
 gulp.task('assemble', function () {
   gulp.src('test/fixtures/pages/*.hbs')
-    .pipe(assemble({assemblerc: '.assemblerc.yml'}))
+    .pipe(assemble(options))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('_gh_pages/'));
 });
 
-gulp.task('verb', function () {
-  gulp.src(['.verbrc.md'])
-    .pipe(verb({dest: 'README.md'}))
-    .pipe(gulp.dest('./'));
-});
-
-
-gulp.task('default', ['assemble', 'verb']);
+// default task
+gulp.task('default', ['assemble']);

@@ -29,11 +29,10 @@
     "install": "echo WARNING!!! This package uses Assemble v0.5.0 alpha!"
   },
   "dependencies": {
-    "assemble": "git://github.com/assemble/assemble.git#v0.5.0",
-    "async": "^0.8.0",
+    "assemble": "git://github.com/assemble/assemble.git#v0.6.0",
+    "event-stream": "^3.1.7",
     "gulp-util": "^2.2.14",
-    "lodash": "^2.4.1",
-    "through2": "^0.4.1"
+    "lodash": "^2.4.1"
   },
   "devDependencies": {
     "chai": "^1.9.1",
