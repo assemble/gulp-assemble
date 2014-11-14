@@ -1,4 +1,4 @@
-# gulp-assemble {%= badge('fury') %} {%= badge('travis') %}
+# gulp-assemble
 
 > Gulp plugin for Assemble.
 
