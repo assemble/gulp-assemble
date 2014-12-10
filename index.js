@@ -15,7 +15,7 @@ var PluginError = gutil.PluginError;
 
 /**
  * Create an instance of the plugin to use with the given options
- * 
+ *
  * @param  {Object} `options` Additional options to pass to assemble and use for loading common templates
  * @return {Stream} Stream to be piped through gulp
  */
@@ -25,7 +25,7 @@ var plugin = module.exports = function (options) {
   var opts = _.extend({}, options);
   assemble.option(opts);
 
-  if (opts.data) assemble.namespace(':basename', opts.data);
+  if (opts.data) assemble.data(opts.data);
   if (opts.layouts) assemble.layouts(opts.layouts);
   if (opts.partials) assemble.partials(opts.partials);
   if (opts.pages) assemble.pages(opts.pages);
