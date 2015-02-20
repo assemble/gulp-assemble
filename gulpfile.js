@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
-var assemble = require('./');
+var assemble = require('assemble');
+var gulpAssemble = require('./')(assemble);
 
 var options = {
   layout: 'default',
@@ -9,14 +10,20 @@ var options = {
   partials: ['test/fixtures/includes/*.hbs']
 };
 
+// setup items on the assemble object
+assemble.data(options.data);
+assemble.option('layout', options.layout);
+assemble.layouts(options.layouts);
+assemble.partials(options.partials);
+
 // add some middleware to run when the files are loaded
 var middleware = require('./examples/middleware/example');
-assemble.instance.onLoad(/\.*/, middleware(assemble));
+assemble.onLoad(/\.*/, middleware(assemble));
 
 // build some sample pages based on the templates in test/fixtures
 gulp.task('assemble', function () {
   gulp.src('test/fixtures/pages/*.hbs')
-    .pipe(assemble(options))
+    .pipe(gulpAssemble())
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('_gh_pages/'));
 });

@@ -32,15 +32,17 @@
     "assemble": "assemble/assemble#v0.6.0",
     "event-stream": "^3.1.7",
     "gulp-util": "^2.2.14",
-    "lodash": "^2.4.1"
+    "lodash": "^2.4.1",
+    "template-init": "^0.1.0",
+    "template-render": "^0.1.0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "assemble": "git://github.com/assemble/assemble#v0.6.0",
     "fixture": "^0.1.0",
+    "gulp": "^3.6.2",
     "gulp-htmlmin": "^0.1.2",
     "gulp-verb": "^0.2.1",
-    "mocha": "^1.18.2",
-    "gulp": "^3.6.2"
+    "mocha": "^1.18.2"
   },
   "keywords": [
     "assemble",

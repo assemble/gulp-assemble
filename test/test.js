@@ -6,19 +6,19 @@
  */
 'use strict';
 
-require('mocha');
 var path = require('path');
 var File = require('gulp-util').File;
-var expect = require('chai').expect;
+var assert = require('assert');
 var fixtures = require('fixture');
-var assemble = require('../');
+var assemble = require('assemble');
+var gulpAssemble = require('../')(assemble);
 
 var middleware = path.join(process.cwd(), 'examples/*.js');
 var yfmFixtures = path.join(fixtures, 'handlebars/with-yfm');
 
 
 describe('gulp-assemble', function() {
-  describe('when a config object is passed to assemble', function() {
+  describe('when assemble is configured with options', function() {
     it('should build files', function(done) {
 
       var options = {
@@ -29,17 +29,20 @@ describe('gulp-assemble', function() {
         }
       };
 
-      var stream = assemble(options);
+      assemble.option(options);
+      assemble.data({ foo: 'bar' });
+
+      var stream = gulpAssemble(options);
 
       var fakeFile = new File({
         cwd: yfmFixtures,
         base: yfmFixtures,
         path: yfmFixtures + '/alert.hbs',
-        contents: new Buffer('---\ntitle: sup\n---\n{{upper title}}')
+        contents: new Buffer('---\ntitle: sup\n---\n{{upper title}} - {{foo}}')
       });
 
       stream.on('data', function (page) {
-        expect('SUP').to.eql(page.contents.toString());
+        assert.equal('SUP - bar', page.contents.toString());
       });
 
       stream.on('end', function () {
