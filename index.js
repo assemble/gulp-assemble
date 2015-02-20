@@ -10,20 +10,28 @@ var initPlugin = require('template-init');
 var es = require('event-stream');
 
 /**
- * Create an instance of the plugin to use with the given options
+ * Pass in an instance of Assemble and additional options and get a Stream
+ * to pass through the gulp pipeline.
  *
- * @param  {Object} `options` Additional options to pass to assemble and use for loading common templates
- * @return {Stream} Stream to be piped through gulp
+ * ```js
+ * var assemble = require('assemble');
+ * var gulpAssemble = require('gulp-assemble');
+ *
+ * gulp.src(['*.hbs'])
+ *   .pipe(gulpAssemble(assemble))
+ *   .pipe(gulp.dest('dist'));
+ * ```
+ *
+ * @param {Object} `assemble` Instance of Assemble to use in the plugin.
+ * @param {Object} `options` Additional options to pass through to Assemble
+ * @return {Stream} Stream to use in gulp pipeline.
  */
 
-module.exports = function assemblePlugin (assemble) {
+module.exports = function assemblePlugin (assemble, options) {
   var init = initPlugin(assemble);
   var render = renderPlugin(assemble);
-
-  return function (options) {
-    return es.pipeline.apply(es, [
-      init(options),
-      render(options)
-    ]);
-  };
+  return es.pipeline.apply(es, [
+    init(options),
+    render(options)
+  ]);
 };

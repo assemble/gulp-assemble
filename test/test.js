@@ -12,7 +12,7 @@ var File = require('gulp-util').File;
 var assert = require('assert');
 var fixtures = require('fixture');
 var assemble = require('assemble');
-var gulpAssemble = require('../')(assemble);
+var gulpAssemble = require('../');
 
 var middleware = path.join(process.cwd(), 'examples/*.js');
 var yfmFixtures = path.join(fixtures, 'handlebars/with-yfm');
@@ -33,7 +33,7 @@ describe('gulp-assemble', function() {
       assemble.option(options);
       assemble.data({ foo: 'bar' });
 
-      var stream = gulpAssemble(options);
+      var stream = gulpAssemble(assemble, options);
 
       var fakeFile = new File({
         cwd: yfmFixtures,

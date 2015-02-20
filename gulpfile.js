@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
 var assemble = require('assemble');
-var gulpAssemble = require('./')(assemble);
+var gulpAssemble = require('./');
 
 var options = {
   layout: 'default',
@@ -23,7 +23,7 @@ assemble.onLoad(/\.*/, middleware(assemble));
 // build some sample pages based on the templates in test/fixtures
 gulp.task('assemble', function () {
   gulp.src('test/fixtures/pages/*.hbs')
-    .pipe(gulpAssemble())
+    .pipe(gulpAssemble(assemble))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest('_gh_pages/'));
 });
