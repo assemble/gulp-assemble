@@ -17,10 +17,13 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/assemble/gulp-assemble/blob/master/LICENSE-MIT"
+      "url": "https://github.com/assemble/gulp-assemble/blob/master/LICENSE"
     }
   ],
   "main": "index.js",
+  "files": [
+    "index.js"
+  ],
   "engines": {
     "node": ">= 0.10.0"
   },
@@ -29,18 +32,19 @@
     "install": "echo WARNING!!! This package uses Assemble v0.5.0 alpha!"
   },
   "dependencies": {
-    "assemble": "assemble/assemble#v0.6.0",
     "event-stream": "^3.1.7",
     "gulp-util": "^2.2.14",
-    "lodash": "^2.4.1"
+    "template-init": "^0.1.0",
+    "template-render": "^0.1.0"
   },
   "devDependencies": {
-    "chai": "^1.9.1",
+    "assemble": "assemble/assemble#v0.6.0",
     "fixture": "^0.1.0",
+    "gulp": "^3.6.2",
+    "gulp-extname": "^0.2.0",
     "gulp-htmlmin": "^0.1.2",
     "gulp-verb": "^0.2.1",
-    "mocha": "^1.18.2",
-    "gulp": "^3.6.2"
+    "mocha": "^1.18.2"
   },
   "keywords": [
     "assemble",

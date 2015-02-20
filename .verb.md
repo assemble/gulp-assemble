@@ -14,21 +14,22 @@ Install with [npm](npmjs.org)
 npm i assemble/gulp-assemble
 ```
 
-Next, cd into the project and run `npm install` to install dependencies.
-
 ## Usage
 
 Example **gulpfile.js** with gulp-assemble and [gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin):
 
 ```javascript
 var gulp = require('gulp');
+var assemble = require('assemble');
 var htmlmin = require('gulp-htmlmin');
-var assemble = require('gulp-assemble');
+var extname = require('gulp-extname');
+var gulpAssemble = require('gulp-assemble');
 
 gulp.task('assemble', function () {
   gulp.src('pages/*.hbs')
-    .pipe(assemble({layout: 'default'}))
+    .pipe(gulpAssemble(assemble))
     .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(extname())
     .pipe(gulp.dest('_gh_pages/'));
 });
 

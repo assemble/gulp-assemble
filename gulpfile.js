@@ -1,23 +1,24 @@
 var gulp = require('gulp');
 var htmlmin = require('gulp-htmlmin');
-var assemble = require('./');
+var extname = require('gulp-extname');
+var assemble = require('assemble');
+var gulpAssemble = require('./');
 
-var options = {
-  layout: 'default',
-  data: ['site.yml', 'test/fixtures/data/*.{json,yml}'],
-  layouts: ['test/fixtures/layouts/*.hbs'],
-  partials: ['test/fixtures/includes/*.hbs']
-};
+// setup items on the assemble object
+assemble.data(['site.yml', 'test/fixtures/data/*.{json,yml}']);
+assemble.layouts(['test/fixtures/layouts/*.hbs']);
+assemble.partials(['test/fixtures/includes/*.hbs']);
 
 // add some middleware to run when the files are loaded
 var middleware = require('./examples/middleware/example');
-assemble.instance.onLoad(/\.*/, middleware(assemble));
+assemble.onLoad(/\.*/, middleware(assemble));
 
 // build some sample pages based on the templates in test/fixtures
 gulp.task('assemble', function () {
   gulp.src('test/fixtures/pages/*.hbs')
-    .pipe(assemble(options))
+    .pipe(gulpAssemble(assemble, { layout: 'default' }))
     .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(extname())
     .pipe(gulp.dest('_gh_pages/'));
 });
 
