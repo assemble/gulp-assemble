@@ -1,4 +1,4 @@
-# gulp-assemble
+# gulp-assemble[![NPM version](https://badge.fury.io/js/gulp-assemble.svg)](http://badge.fury.io/js/gulp-assemble) [![Build Status](https://travis-ci.org/assemble/gulp-assemble.svg)](https://travis-ci.org/assemble/gulp-assemble) 
 
 > Gulp plugin for Assemble.
 
