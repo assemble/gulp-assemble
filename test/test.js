@@ -1,9 +1,10 @@
-/**
- * Assemble <http://assemble.io>
+/*!
+ * gulp-assemble <git://github.com/assemble/gulp-assemble.git>
  *
- * Copyright (c) 2014 Jon Schlinkert, Brian Woodward, contributors
- * Licensed under the MIT License (MIT).
+ * Copyright (c) 2014-2015, Brian Woodward.
+ * Licensed under the MIT License.
  */
+
 'use strict';
 
 var path = require('path');
