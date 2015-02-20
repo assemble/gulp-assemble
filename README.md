@@ -6,12 +6,10 @@
 
 Since gulp-assemble is using the [v0.6.0-alpha branch of Assemble](https://github.com/assemble/assemble/tree/v0.6.0), this is not ready to be used unless you're willing to deal with daily changes, broken code, and lack of documentation.
 
-## Install
-
-Install with [npm](npmjs.org)
+## Install with [npm](npmjs.org)
 
 ```bash
-npm i assemble/gulp-assemble
+npm i gulp-assemble --save-dev
 ```
 
 ## Usage
