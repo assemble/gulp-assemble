@@ -18,14 +18,15 @@ var es = require('event-stream');
  * var gulpAssemble = require('gulp-assemble');
  *
  * gulp.src(['*.hbs'])
- *   .pipe(gulpAssemble(assemble))
+ *   .pipe(gulpAssemble(assemble, { layout: 'default' }))
  *   .pipe(gulp.dest('dist'));
  * ```
  *
  * @param {Object} `assemble` Instance of Assemble to use in the plugin.
- * @param {Object} `options` Additional options to pass through to Assemble
+ * @param {Object} `options` Additional options to pass through to `assemble.src` and `assemble.dest`
  * @return {Stream} Stream to use in gulp pipeline.
  * @api public
+ * @name  gulpAssemble
  */
 
 module.exports = function assemblePlugin (assemble, options) {
