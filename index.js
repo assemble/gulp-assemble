@@ -25,6 +25,7 @@ var es = require('event-stream');
  * @param {Object} `assemble` Instance of Assemble to use in the plugin.
  * @param {Object} `options` Additional options to pass through to Assemble
  * @return {Stream} Stream to use in gulp pipeline.
+ * @api public
  */
 
 module.exports = function assemblePlugin (assemble, options) {

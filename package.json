@@ -38,6 +38,7 @@
     "assemble": "assemble/assemble#v0.6.0",
     "fixture": "^0.1.0",
     "gulp": "^3.6.2",
+    "gulp-extname": "^0.2.0",
     "gulp-htmlmin": "^0.1.2",
     "gulp-verb": "^0.2.1",
     "mocha": "^1.18.2"
