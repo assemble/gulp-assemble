@@ -6,6 +6,14 @@
 
 Since gulp-assemble is using the [v0.6.0-alpha branch of Assemble](https://github.com/assemble/assemble/tree/v0.6.0), this is not ready to be used unless you're willing to deal with daily changes, broken code, and lack of documentation.
 
+Please help us ship v0.6.0 [by reporting any issues](https://github.com/assemble/assemble/issues/new). Thanks!
+
+**Should I use Assemble directly, or the gulp plugin?**
+
+- If assemble plays a central role in the build, it probably makes sense to create an `assemblefile.js` and use assemble v0.6.0 directly. 
+- If not, use the plugin!
+
+
 ## Install with [npm](npmjs.org)
 
 ```bash
@@ -13,6 +21,23 @@ npm i gulp-assemble --save-dev
 ```
 
 ## Usage
+
+Pass in an instance of Assemble and additional options and get a Stream to pass through the gulp pipeline.
+
+* `assemble` **{Object}**: Instance of Assemble to use in the plugin.    
+* `options` **{Object}**: Additional options to pass through to `assemble.src` and `assemble.dest`    
+* `returns` **{Stream}**: Stream to use in gulp pipeline.  
+
+```js
+var assemble = require('assemble');
+var gulpAssemble = require('gulp-assemble');
+
+gulp.src(['*.hbs'])
+  .pipe(gulpAssemble(assemble, { layout: 'default' }))
+  .pipe(gulp.dest('dist'));
+```
+
+## Example
 
 Example **gulpfile.js** with gulp-assemble and [gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin):
 
@@ -32,24 +57,6 @@ gulp.task('assemble', function () {
 });
 
 gulp.task('default', ['assemble']);
-```
-
-## API
-### [.gulpAssemble](./index.js#L32)
-
-Pass in an instance of Assemble and additional options and get a Stream to pass through the gulp pipeline.
-
-* `assemble` **{Object}**: Instance of Assemble to use in the plugin.    
-* `options` **{Object}**: Additional options to pass through to `assemble.src` and `assemble.dest`    
-* `returns` **{Stream}**: Stream to use in gulp pipeline.  
-
-```js
-var assemble = require('assemble');
-var gulpAssemble = require('gulp-assemble');
-
-gulp.src(['*.hbs'])
-  .pipe(gulpAssemble(assemble, { layout: 'default' }))
-  .pipe(gulp.dest('dist'));
 ```
 
 ## Author
