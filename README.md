@@ -22,7 +22,7 @@ npm i gulp-assemble --save-dev
 
 ## Usage
 
-Pass in an instance of Assemble and additional options and get a Stream to pass through the gulp pipeline.
+Pass an instance of `Assemble` and additional options and get a Stream to pass through the gulp pipeline.
 
 * `assemble` **{Object}**: Instance of Assemble to use in the plugin.    
 * `options` **{Object}**: Additional options to pass through to `assemble.src` and `assemble.dest`    
@@ -37,7 +37,7 @@ gulp.src(['*.hbs'])
   .pipe(gulp.dest('dist'));
 ```
 
-## Example
+## Example gulpfile.js
 
 Example **gulpfile.js** with gulp-assemble and [gulp-htmlmin](https://github.com/jonschlinkert/gulp-htmlmin):
 
