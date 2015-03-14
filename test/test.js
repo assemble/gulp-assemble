@@ -14,31 +14,23 @@ var fixtures = require('fixture');
 var assemble = require('assemble');
 var gulpAssemble = require('../');
 
-var middleware = path.join(process.cwd(), 'examples/*.js');
-var yfmFixtures = path.join(fixtures, 'handlebars/with-yfm');
-
+var fixture = path.join(fixtures, 'handlebars/with-yfm');
 
 describe('gulp-assemble', function() {
   describe('when assemble is configured with options', function() {
     it('should build files', function(done) {
 
-      var options = {
-        helpers: {
-          upper: function (str) {
-            return str.toUpperCase();
-          }
-        }
-      };
-
-      assemble.option(options);
       assemble.data({ foo: 'bar' });
+      assemble.helper('upper', function (str) {
+        return str.toUpperCase();
+      });
 
-      var stream = gulpAssemble(assemble, options);
+      var stream = gulpAssemble(assemble);
 
       var fakeFile = new File({
-        cwd: yfmFixtures,
-        base: yfmFixtures,
-        path: yfmFixtures + '/alert.hbs',
+        cwd: fixture,
+        base: fixture,
+        path: fixture + '/alert.hbs',
         contents: new Buffer('---\ntitle: sup\n---\n{{upper title}} - {{foo}}')
       });
 
@@ -54,5 +46,4 @@ describe('gulp-assemble', function() {
       stream.end();
     });
   });
-
 });
