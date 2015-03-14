@@ -5,7 +5,8 @@ var assemble = require('assemble');
 var gulpAssemble = require('./');
 
 // setup items on the assemble object
-assemble.data(['site.yml', 'test/fixtures/data/*.{json,yml}']);
+assemble.data({site: {title: 'Blog'}});
+assemble.data(['test/fixtures/data/*.{json,yml}']);
 assemble.layouts(['test/fixtures/layouts/*.hbs']);
 assemble.partials(['test/fixtures/includes/*.hbs']);
 

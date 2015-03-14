@@ -14,16 +14,14 @@
   "bugs": {
     "url": "git://github.com/assemble/gulp-assemble/issues"
   },
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "https://github.com/assemble/gulp-assemble/blob/master/LICENSE"
-    }
-  ],
-  "main": "index.js",
+  "license": {
+    "type": "MIT",
+    "url": "https://github.com/assemble/gulp-assemble/blob/master/LICENSE"
+  },
   "files": [
     "index.js"
   ],
+  "main": "index.js",
   "engines": {
     "node": ">= 0.10.0"
   },
