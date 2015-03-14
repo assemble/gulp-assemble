@@ -1,7 +1,7 @@
 {
   "name": "gulp-assemble",
   "description": "Gulp plugin for Assemble.",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "homepage": "http://assemble.io",
   "author": {
     "name": "Brian Woodward",
@@ -27,43 +27,40 @@
   },
   "scripts": {
     "test": "mocha",
-    "install": "echo WARNING!!! This package uses Assemble v0.5.0 alpha!"
+    "install": "echo WARNING!!! This package uses Assemble v0.6.0-beta!"
   },
   "dependencies": {
-    "event-stream": "^3.1.7",
-    "gulp-util": "^2.2.14",
-    "template-init": "^0.3.0",
-    "template-render": "^0.3.1"
+    "event-stream": "^3.3.0",
+    "template-init": "^0.2.2",
+    "template-render": "^0.4.1"
   },
   "devDependencies": {
-    "assemble": "assemble/assemble#v0.6.0",
+    "assemble": "assemble/assemble#v0.6.0-beta",
     "fixture": "^0.1.0",
-    "gulp": "^3.6.2",
+    "gulp": "^3.8.11",
     "gulp-extname": "^0.2.0",
-    "gulp-htmlmin": "^0.1.2",
-    "gulp-verb": "^0.2.1",
-    "mocha": "^1.18.2"
+    "gulp-htmlmin": "^1.1.1",
+    "gulp-util": "^3.0.4"
   },
   "keywords": [
     "assemble",
-    "assemblerunner",
     "blog",
     "build",
     "component",
     "front",
     "front-matter",
+    "generate",
     "generator",
     "gulp",
+    "gulpplugin",
     "handlebars",
     "helper",
     "helpers",
-    "javascript",
     "matter",
-    "node",
-    "node.js",
     "page",
-    "post",
     "partial",
+    "plugin",
+    "post",
     "scaffold",
     "site",
     "static",
