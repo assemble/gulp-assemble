@@ -3,21 +3,12 @@
   "description": "Gulp plugin for Assemble.",
   "version": "0.3.2",
   "homepage": "http://assemble.io",
-  "author": {
-    "name": "Brian Woodward",
-    "url": "https://github.com/doowb"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/assemble/gulp-assemble.git"
-  },
+  "author": "Brian Woodward (https://github.com/doowb)",
+  "repository": "assemble/gulp-assemble",
   "bugs": {
     "url": "git://github.com/assemble/gulp-assemble/issues"
   },
-  "license": {
-    "type": "MIT",
-    "url": "https://github.com/assemble/gulp-assemble/blob/master/LICENSE"
-  },
+  "license": "MIT",
   "files": [
     "index.js"
   ],
@@ -66,5 +57,10 @@
     "static",
     "task",
     "templates"
-  ]
+  ],
+  "verb": {
+    "related": {
+      "list": []
+    }
+  }
 }

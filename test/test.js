@@ -21,7 +21,7 @@ describe('gulp-assemble', function() {
     it('should build files', function(done) {
 
       assemble.data({ foo: 'bar' });
-      assemble.helper('upper', function (str) {
+      assemble.helper('upper', function(str) {
         return str.toUpperCase();
       });
 
@@ -34,11 +34,11 @@ describe('gulp-assemble', function() {
         contents: new Buffer('---\ntitle: sup\n---\n{{upper title}} - {{foo}}')
       });
 
-      stream.on('data', function (page) {
+      stream.on('data', function(page) {
         assert.equal('SUP - bar', page.contents.toString());
       });
 
-      stream.on('end', function () {
+      stream.on('end', function() {
         done();
       });
 
