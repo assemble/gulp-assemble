@@ -1,8 +1,9 @@
 {
   "name": "gulp-assemble",
   "description": "Gulp plugin for Assemble.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "homepage": "http://assemble.io",
+  "deprecated": "This project has been deprecated. Use assemble directly or as a node library with gulp.",
   "author": "Brian Woodward (https://github.com/doowb)",
   "repository": "assemble/gulp-assemble",
   "bugs": {
@@ -17,8 +18,7 @@
     "node": ">= 0.10.0"
   },
   "scripts": {
-    "test": "mocha",
-    "install": "echo WARNING!!! This package uses Assemble v0.6.0-beta!"
+    "test": "mocha"
   },
   "dependencies": {
     "event-stream": "^3.3.0",
@@ -61,6 +61,9 @@
   "verb": {
     "related": {
       "list": []
-    }
+    },
+    "plugins": [
+      "gulp-format-md"
+    ]
   }
 }
